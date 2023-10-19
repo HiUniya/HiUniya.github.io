@@ -1,0 +1,18 @@
+# robots.txt
+User-agent: *
+
+Allow: /
+Allow: /archives/
+Allow: /About/
+Allow: /Friends/
+Allow: /categories/
+Allow: /page/
+Allow: /posts/
+Allow: /posts-img/
+Allow: /tags/
+
+Disallow: /font/
+Disallow: /css/
+Disallow: /scss/
+
+Sitemap: https://weekday.work/sitemap.xml

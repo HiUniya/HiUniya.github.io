@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Uniya" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      学习笔记 整除(数论)分块 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">Uniya</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="github" target="_blank" href="https://github.com/hiuniya">
+      <i class="iconfont icon-github"></i>
+    </a>
+  
+    <a title="About" target="" href="/about/">
+      <i class="iconfont icon-edit"></i>
+    </a>
+  
+    <a title="rss" target="_blank" href="/atom.xml">
+      <i class="iconfont icon-rss"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Oct 12, 2021
+  </h3>
+  <h1>
+    学习笔记 整除(数论)分块
+  </h1>
+  <div class="content markdown-body">
+    <p>首先，让我们引入一个式子<br>$$<br>\sum_{i&#x3D;1}^{n}\lfloor\frac{n}{i}\rfloor (1\le n \le 10^8)<br>$$<br>看起来，似乎很简单？如果将值域改为$1\le n \le 1e12$呢？那么就需要用到我们今天的知识点了——数论分块</p>
+<p>我们将每一个 $\lfloor \frac{n}{i} \rfloor$ 列出来：</p>
+<p>令 $n&#x3D;9$</p>
+<table>
+<thead>
+<tr>
+<th>$i$</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\lfloor\frac{n}{i}\rfloor$</td>
+<td>9</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>发现了什么规律？区间$[5,9]$的值都为$1$</p>
+<p>由此，我们便可以通过每一块值域相同的区间，来快速计算上面的式子</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//P1403</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line">ll n,ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(ll l=<span class="number">1</span>,r;l&lt;=n;l=r+<span class="number">1</span>)&#123;</span><br><span class="line">		r=n/(n/l);</span><br><span class="line">		ans+=(r-l+<span class="number">1</span>)*(n/l);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>每一块的区间左端点为$l$，则其区间右端点为$n&#x2F;(n&#x2F;l)$，这一段的值为$\lfloor \frac{n}{l} \rfloor$，时间复杂度为$O(\sqrt n)$</p>
+<hr>
+<h2 id="例1-P2261-CQOI2007-余数求和"><a href="#例1-P2261-CQOI2007-余数求和" class="headerlink" title="例1 P2261 [CQOI2007]余数求和"></a>例1 P2261 [CQOI2007]余数求和</h2><h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给出正整数 $n$ 和 $k$，求：<br>$$<br>G(n,k)&#x3D;\sum_{i&#x3D;1}^{n} k \mbox{ mod } i<br>$$<br>其中 $k$ mod $i$ 表示 $k$ 除以 $i$ 的余数。</p>
+<h3 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h3><p>首先我们将  $k$ mod $i$ 的形式换为更为简单的形式：<br>$$<br>G(n,k)&#x3D;\sum_{i&#x3D;1}^{n} k-\lfloor\frac{k}{i}\rfloor i<br>$$<br>然后我们将 $k$ 提出来，得到：<br>$$<br>G(n,k)&#x3D;nk-\sum_{i&#x3D;1}^{n} \lfloor\frac{k}{i}\rfloor i<br>$$<br>可以将  $\lfloor \frac{k}{i} \rfloor$ 拿出来分块，结束。</p>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line">ll n,k,ans;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">	ans=n*k;</span><br><span class="line">	<span class="keyword">for</span>(ll l=<span class="number">1</span>,r;l&lt;=n;l=r+<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(k/l!=<span class="number">0</span>) r=<span class="built_in">min</span>(k/(k/l),n);</span><br><span class="line">		<span class="keyword">else</span> r=n;</span><br><span class="line">		ans-=(l+r)*(r-l+<span class="number">1</span>)/<span class="number">2</span>*(k/l);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="P2424-约数和"><a href="#P2424-约数和" class="headerlink" title="P2424 约数和"></a>P2424 约数和</h2><h3 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h3><p>令$f(x)$ 表示 $x$ 所有约数之和，给定一个区间$[l,r]$，求：<br>$$<br>\sum_{i&#x3D;l}^{r}f(i)<br>$$</p>
+<h3 id="解题过程-1"><a href="#解题过程-1" class="headerlink" title="解题过程"></a>解题过程</h3><p>我们先从区间 [1,n] 看起，令 $n&#x3D;6$：</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td></td>
+<td>2</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>3</td>
+<td></td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>6</td>
+</tr>
+</tbody></table>
+<p>不难发现：<br>$$<br>\sum_{i&#x3D;1}^{n}f(i)&#x3D;\sum_{i&#x3D;1}^{n}\lfloor\frac{n}{i}\rfloor i<br>$$<br>对$\lfloor\frac{n}{i}\rfloor$分块即可，那么对于区间$[l,r]$便很简单了，通过前缀和来求出答案：<br>$$<br>\sum_{i&#x3D;1}^{r}\lfloor\frac{r}{i}\rfloor-\sum_{i&#x3D;1}^{l-1}\lfloor\frac{l-1}{i}\rfloor<br>$$</p>
+<h3 id="源代码-1"><a href="#源代码-1" class="headerlink" title="源代码"></a>源代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line">ll X,Y;</span><br><span class="line">ll ans1,ans2;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld&quot;</span>,&amp;X,&amp;Y);</span><br><span class="line">	ans1=ans2=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> l=<span class="number">1</span>,r;l&lt;=X<span class="number">-1</span>;l=r+<span class="number">1</span>)&#123;</span><br><span class="line">		r=<span class="built_in">min</span>((X<span class="number">-1</span>)/((X<span class="number">-1</span>)/l),X<span class="number">-1</span>);</span><br><span class="line">		ans1+=((X<span class="number">-1</span>)/l)*(l+r)*(r-l+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(ll l=<span class="number">1</span>,r;l&lt;=Y;l=r+<span class="number">1</span>)&#123;</span><br><span class="line">		r=<span class="built_in">min</span>(Y/(Y/l),Y);</span><br><span class="line">		ans2+=(Y/l)*(l+r)*(r-l+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans2-ans1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="P6583-回首过去"><a href="#P6583-回首过去" class="headerlink" title="P6583 回首过去"></a>P6583 回首过去</h2><h3 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定正整数 $n$，求出有序整数对 $(x,y)$ 的个数，满足 $1\le x,y \le n$ 且 $\lfloor \frac{x}{y} \rfloor$ 可以表示为十进制有限小数。</p>
+<h3 id="解题过程-2"><a href="#解题过程-2" class="headerlink" title="解题过程"></a>解题过程</h3><ul>
+<li><p>Subtask 1</p>
+<p>理解题意之后，我们很容易得出下面这个式子<br>$$<br>\sum_{i&#x3D;1}^{n} \sum_{j&#x3D;1}^{n} [i&#x3D;&#x3D;gcd(i,j)\cdot2^a5^b]<br>$$<br>其中$a,b$分别表示$i$中含有因数2,5的个数</p>
+<p>直接暴力求解即可</p>
+</li>
+<li><p>Subtask 2</p>
+<p>容易发现，对于 $i$ ，答案为$\lfloor \frac{n}{\frac{i}{2^a5^b}} \rfloor$，我们可得到<br>$$<br>\sum_{i&#x3D;1}^{n}\lfloor\frac{n}{\frac{i}{2^a5^b}}\rfloor<br>$$<br>其中$a,b$分别表示$i$中含有因数2,5的个数</p>
+<p>根据式子求解即可</p>
+</li>
+<li><p>Subtask 3</p>
+<p>我们将公式化简一下，可以得到<br>$$<br>\sum^{n}_{i&#x3D;1}\lfloor\frac{2^a5^bn}{i}\rfloor<br>$$<br>其中$a,b$分别表示$i$中含有因数2,5的个数</p>
+<p>有没有看到熟悉的东西？接下来我们将 $2^a5^b$提出来，得到<br>$$<br>\sum_{a&#x3D;0}^{40}\sum_{b&#x3D;0}^{20}\sum_{i&#x3D;1}^{2^a5^bi\le n}\lfloor\frac{n}{i}\rfloor\cdot[i%2!&#x3D;0\mbox{ and }i%5!&#x3D;0]<br>$$<br>$i$中此时不含因数$2,5$</p>
+<p>我们来思考一下怎么将最外面两层循环替换掉：</p>
+<p>我们固定 $i$ ，对于 $i$ 有$1\le2^a5^bi\le n$ 即$1\le 2^a5^b\le \lfloor\frac{n}{i}\rfloor$ ，所以我们只需要对 $i$ 求出在 $[1,\lfloor\frac{n}{i}\rfloor]$ 内所有形如$2^a5^b$的的个数，我们令$f(x)$表示 $[1,x]$ 内所有形如$2^a5^b$的个数，式子转化为：<br>$$<br>\sum_{i&#x3D;1}^{n}f(\lfloor\frac{n}{i}\rfloor)\cdot\lfloor\frac{n}{i}\rfloor\cdot[i%2!&#x3D;0\mbox{ and }i%5!&#x3D;0]<br>$$<br>至于 $f(x)$ 如何去求呢？</p>
+<p>我们通过简单的计算，可得在 $[1,10^{12}]$ 内，形如 $2^a5^b$ 的数共有371个。</p>
+<p>所以我们将每一个形如$2^a5^b$数字存入数组，进行排序，利用二分查找位置即可得到答案。</p>
+<p>接下来我们对 $\lfloor\frac{n}{i}\rfloor$ 进行分块，设 $\lfloor\frac{n}{i}\rfloor$ 相同的区间为$[l,r]$</p>
+<p>我们看到后面：$[i%2!&#x3D;0\mbox{ and }i%5!&#x3D;0]$ </p>
+<p>在 $[l,r]$ 中 $i$ 并不是连续的！考虑容斥</p>
+<p>老样子，我们先讨论 $[1,n]$ 中的不含 $2,5$ 倍数的数字之和</p>
+<p>对于 $2$ 的倍数，我们很容易得到个数 $n&#x2F;2$</p>
+<p>对于 $5$ 的倍数，我们很容易得到个数 $n&#x2F;5$</p>
+<p>但是 有些数字既是 $2$ 的倍数 又是 $5$ 的倍数，直接减去，会将这一部分多减一次，我们要加回来，即加上这两个数字的最小公倍数$lcm(2,5)&#x3D;10$的倍数个数 $n&#x2F;10$</p>
+<p>最后得到 $[1,n]$ 中不含 $2,5$ 的倍数数字之和：<br>$$<br>G(1,n)&#x3D;n-\frac{n}{2}-\frac{n}{5}+\frac{n}{10}<br>$$<br> $G(1,x)$ 表示 $[1,x]$ 中不含 $2,5$ 的倍数数字之和</p>
+<p>那么求 $G(l,r)$ 也很简单了，通过前缀和计算答案：<br>$$<br>G(l,r)&#x3D;G(1,r)-G(1,l-1)<br>$$<br>所以最后每一块 $[l,r]$ 的答案就是<br>$$<br>G(l,r)\cdot\lfloor\frac{n}{i}\rfloor\cdot f(\lfloor \frac{n}{i} \rfloor)<br>$$</p>
+</li>
+</ul>
+<h3 id="源代码-2"><a href="#源代码-2" class="headerlink" title="源代码"></a>源代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="type">const</span> ll Maxn=<span class="number">1e12</span>+<span class="number">5</span>;</span><br><span class="line">ll a[<span class="number">1000</span>],cnt=<span class="number">0</span>;</span><br><span class="line">ll n;</span><br><span class="line"><span class="function">ll <span class="title">F</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">upper_bound</span>(a+<span class="number">1</span>, a+<span class="number">1</span>+cnt,x)-a<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">G</span><span class="params">(ll l,ll r)</span></span>&#123;</span><br><span class="line">	ll res=r-l+<span class="number">1</span>;</span><br><span class="line">	res-=(r/<span class="number">2</span>)-(l<span class="number">-1</span>)/<span class="number">2</span>;</span><br><span class="line">	res-=(r/<span class="number">5</span>)-(l<span class="number">-1</span>)/<span class="number">5</span>;</span><br><span class="line">	res+=(r/<span class="number">10</span>)-(l<span class="number">-1</span>)/<span class="number">10</span>;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">ll ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=Maxn;i*=<span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">for</span>(ll j=i;j&lt;=Maxn;j*=<span class="number">5</span>)&#123;</span><br><span class="line">			a[++cnt]=j;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(a+<span class="number">1</span>,a+<span class="number">1</span>+cnt);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(ll l=<span class="number">1</span>,r;l&lt;=n;l=r+<span class="number">1</span>)&#123;</span><br><span class="line">		r=n/(n/l);</span><br><span class="line">		ans+=<span class="built_in">F</span>(n/l)*(n/l)*<span class="built_in">G</span>(l,r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//特别注意，此处的F(x)同上文的f(x)，G(l,r)同上文的G(l,r)</span></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2021-2/oi-luogu-p2542/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2021-2/oi-trie-tree-note/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://uniya.work/">Copyright © Uniya 2021</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/leedom92/hexo-theme-leedom">Theme by Leedom | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          <!-- <span class="search-icon-input">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </span> -->
+          
+            <input type="text" class="search-input" id="search-input" placeholder="$ grep...">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-close"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    // inputArea.onclick = function() {
+    //   getSearchFile()
+    //   this.onclick = null
+    // }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+        getSearchFile()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'><span></ul>";
+      // $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'><h2>" + orig_data_title + "</h2></a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<h3 class=\"search-result-abstract\">" + match_content + "...</h3>"
+                }
+                str += "<hr></li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/leedom92/hexo-theme-leedom#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>

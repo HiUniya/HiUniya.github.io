@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Uniya" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      红框框与蓝框框——C盘瘦身小技巧 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">Uniya</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="github" target="_blank" href="https://github.com/hiuniya">
+      <i class="iconfont icon-github"></i>
+    </a>
+  
+    <a title="About" target="" href="/about/">
+      <i class="iconfont icon-edit"></i>
+    </a>
+  
+    <a title="rss" target="_blank" href="/atom.xml">
+      <i class="iconfont icon-rss"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Mar 25, 2023
+  </h3>
+  <h1>
+    红框框与蓝框框——C盘瘦身小技巧
+  </h1>
+  <div class="content markdown-body">
+    <blockquote>
+<p>“（）难崩 修电脑修快十年了 第一次写这种教程”</p>
+<p>“哈哈哈哈哈”</p>
+<p>一台电脑，可以用上十几年而坚如磐石；但，没有一台电脑能逃得过C盘满仓定律！</p>
+<p>事实上，大部分电脑的卡与慢，来自于磁盘文件碎片化和系统盘容量用尽：前者会使系统读取文件的速度减慢，后者会使系统的临时缓存文件无法存储，从而导致电脑卡顿。</p>
+<p>虽然我们常说，重装电脑是解决电脑卡顿的最好办法，可理想是美好的，现实是残酷的——我们的电脑有许许多多的重要工作文件、聊天记录、工作环境。本期教程，我们会在不重装系统的条件下，完成C盘瘦身。</p>
+</blockquote>
+<blockquote>
+<p>实验机：ASUS U31sd</p>
+<p>配置：</p>
+<p>CPU Intel Core i5-2410M </p>
+<p>RAM 4GB DDR3 1600</p>
+<p>SSD Teclast 128GB S550 ATA Device</p>
+<p>System Windows 7 Ultimate x86_64</p>
+<p><img src="/../posts-img/Disk-C-thin/1.png" alt="Picture1"></p>
+<p>此为未瘦身之前磁盘容量</p>
+</blockquote>
+<h2 id="软件篇"><a href="#软件篇" class="headerlink" title="软件篇"></a>软件篇</h2><blockquote>
+<p>也许你的电脑上，有许多的冗余的同类软件，其实不需要那么多个软件，只需要一个；也许你的电脑，所有的软件都安装在C盘上，我们其实可以专门用一个额外磁盘，比如说D盘，作为我们的软件盘，如此系统盘便不会冗余而繁杂。</p>
+</blockquote>
+<p>一、检查我们电脑上的软件目录：</p>
+<p>开始菜单 -&gt; 控制面板 -&gt; 程序 -&gt; 卸载程序：</p>
+<p>按着以下目录开始检查：</p>
+<blockquote>
+<p>媒体播放器：只需要留一个，建议留QQ影音 或者 Potplayer；</p>
+<p>音乐播放：网易云音乐、QQ音乐、酷狗音乐；（可留可不留，或三者留其一）</p>
+<p>浏览器：360安全浏览器 360极速浏览器；（推荐极速浏览器，广告较少；网银需要IE\极速双核；建议二者留其一，卸载时需要备份浏览器收藏夹）</p>
+<p>网银、证券软件：重要，勿删；</p>
+<p>打印机等驱动：重要，误删；</p>
+<p>安全软件：360安全中心、360杀毒、腾讯管家、金山毒霸、江民软件、瑞星杀毒、火绒；（严重建议，只留其一，360杀毒和火绒优先选择；360安全中心过于臃肿；多个共存只会严重占用电脑内存，拖慢运行速度）</p>
+<p>软件管家：360软件管家、腾讯软件管家（建议全部删除，下载时直接从官网处下载）</p>
+<p>办公类软件：QQ 微信 WPS Office（建议不删）</p>
+<p>压缩工具：360压缩、Winrar等等（建议只留一个压缩软件）</p>
+</blockquote>
+<p>二、迁移软件到D盘</p>
+<p>首先是两个大头软件，QQ和微信，他们的数据存储在C盘个人文件夹中（My Document），极大的占用了C盘空间，我们可以把QQ和微信的数据转移到D盘。</p>
+<p>在D盘先添加一个新的文件夹 命名为 Tencent File</p>
+<p>QQ： 设置 -&gt; 基本设置 -&gt; 文件管理</p>
+<p>在选择个人文件夹项，改为自定义（修改为刚才的目录，我的为D:\Tencent File）</p>
+<p><img src="/../posts-img/Disk-C-thin/2.png" alt="Picture2"></p>
+<p>此时系统弹出：</p>
+<p><img src="/../posts-img/Disk-C-thin/3.png" alt="Picture3"></p>
+<p>单击，是。</p>
+<p>界面变为：</p>
+<p><img src="/../posts-img/Disk-C-thin/4.png" alt="Picture4"></p>
+<p>耐心等待迁移即可。</p>
+<hr>
+<p>在D盘先添加一个新的文件夹 命名为 Wechat File</p>
+<p>微信：设置 -&gt; 文件管理 -&gt; 更改，然后选择刚刚添加的文件夹，然后出现提示：</p>
+<p><img src="/../posts-img/Disk-C-thin/5.png" alt="Picture5"></p>
+<p>耐心等待迁移即可。</p>
+<hr>
+<p>接下来，我们就对剩下的软件进行操刀：大部分操作都一致，提前备份软件，然后卸载软件，重新安装软件，把软件安装目录修改到D盘下，注意文件夹的建立，防止软件直接解压到根目录下，此处需要注意，只能修改的软件仅包括，媒体播放器、音乐播放器、WPS、下载软件（如百度网盘、迅雷）、解压缩软件，其他软件如（网银、证券、浏览器、安全软件、QQ、微信、驱动）不能执行此操作。</p>
+<p>三、清理软件缓存</p>
+<p>随着时间的延长，各软件运行后积累下越来越多的冗余的缓存，我们可以视情况清空，从而减小碎片文件。</p>
+<p>1）删除个人目录内的临时文件</p>
+<p>首先，在键盘上按下 Windows徽标键+R，打开运行窗口，输入 <strong>%temp%<strong>，点击</strong>回车</strong>；</p>
+<p><img src="/../posts-img/Disk-C-thin/6.png" alt="Picture6"></p>
+<p>此时，电脑上弹出temp文件夹，在键盘上按下 Ctrl+A 执行全选操作，然后 Shift+Delete 彻底删除临时文件。</p>
+<p><img src="/../posts-img/Disk-C-thin/7.png" alt="Picture7"></p>
+<p><img src="/../posts-img/Disk-C-thin/8.png" alt="Picture8"></p>
+<p>2）删除系统目录内的临时文件</p>
+<p>首先，在键盘上按下 Windows徽标键+R，打开运行窗口，输入 <strong>cleanmgr</strong>，点击<strong>回车</strong>；</p>
+<p><img src="/../posts-img/Disk-C-thin/10.png" alt="Picture10"></p>
+<p>弹出磁盘清理界面，选择C盘，确认；</p>
+<p><img src="/../posts-img/Disk-C-thin/11.png" alt="Picture11"></p>
+<p>分析后出现此界面，将所有内容全选，然后确定后删除文件。</p>
+<p><img src="/../posts-img/Disk-C-thin/12.png" alt="Picture12"></p>
+<p><img src="/../posts-img/Disk-C-thin/13.png" alt="Picture13"></p>
+<p>3）使用清理软件进行清理</p>
+<p>此处用到软件 CleanMaster.exe</p>
+<p>下载后打开：</p>
+<p><img src="/../posts-img/Disk-C-thin/15.png" alt="Picture15"></p>
+<p>点击开始查找垃圾文件，等待搜索；搜索完成后出现以下界面，点击全选，然后按下清理文件。</p>
+<p><img src="/../posts-img/Disk-C-thin/16.png" alt="Picture16"></p>
+<h2 id="碎片篇"><a href="#碎片篇" class="headerlink" title="碎片篇"></a>碎片篇</h2><p>在刚才下载的软件内，找到 DefragMaster.exe，打开，出现如下界面：</p>
+<p><img src="/../posts-img/Disk-C-thin/17.png" alt="Picture17"></p>
+<p>单击C盘，按分析，而后整理，完成。</p>
+<h2 id="文件篇"><a href="#文件篇" class="headerlink" title="文件篇"></a>文件篇</h2><p>1）桌面上的文件</p>
+<p>将桌面上的文件移动到C盘，或将桌面储存文件的位置修改到D盘等。</p>
+<p>前者容易操作，现在讲一下后者方法：</p>
+<p>我们先在除C盘外的磁盘建立一个新文件夹，如我在E盘建立一个文件名为Desk的文件夹</p>
+<p>打开计算机-&gt;C盘-&gt;用户（Users）-&gt; Xiangdong（用户名）如图：</p>
+<p><img src="/../posts-img/Disk-C-thin/17.png" alt="Picture17"></p>
+<p>右键桌面-&gt; 属性，调出如下菜单：</p>
+<p><img src="/../posts-img/Disk-C-thin/18.png" alt="Picture18"></p>
+<p>点击 位置，之后点击移动，选择我们刚刚建立的文件夹，然后确认移动。</p>
+<p>等待文件迁移后，Desktop目录便已被迁移。</p>
+<p>2）QQ、微信中的文件，见软件篇一。</p>
+<p>完成上述步骤之后，现在我们就得到了一个蓝框框的C盘啦！</p>
+<p>我们刚刚的实验机，除了软件没有移动，完成其他步骤之后，瘦身了10G有余。</p>
+<p><img src="/../posts-img/Disk-C-thin/20.png" alt="Picture20"></p>
+<hr>
+<p>感谢您观看此处教程，如有不当之处，请指正。</p>
+<p>本文所用软件附在下文，为Win7Master的阉割版。</p>
+<p>下载:<a target="_blank" rel="noopener" href="https://uniya.lanzoum.com/i0Thn0r3l5gd">https://uniya.lanzoum.com/i0Thn0r3l5gd</a> 密码:4jw1</p>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2021-2/oi-trie-tree-note/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/OI-memory1/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://uniya.work/">Copyright © Uniya 2021</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/leedom92/hexo-theme-leedom">Theme by Leedom | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          <!-- <span class="search-icon-input">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </span> -->
+          
+            <input type="text" class="search-input" id="search-input" placeholder="$ grep...">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-close"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    // inputArea.onclick = function() {
+    //   getSearchFile()
+    //   this.onclick = null
+    // }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+        getSearchFile()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'><span></ul>";
+      // $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'><h2>" + orig_data_title + "</h2></a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<h3 class=\"search-result-abstract\">" + match_content + "...</h3>"
+                }
+                str += "<hr></li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/leedom92/hexo-theme-leedom#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>

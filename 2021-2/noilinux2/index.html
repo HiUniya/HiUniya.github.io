@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Uniya" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      NOI Linux 2.0 不完全食用指南 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">Uniya</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="github" target="_blank" href="https://github.com/hiuniya">
+      <i class="iconfont icon-github"></i>
+    </a>
+  
+    <a title="About" target="" href="/about/">
+      <i class="iconfont icon-edit"></i>
+    </a>
+  
+    <a title="rss" target="_blank" href="/atom.xml">
+      <i class="iconfont icon-rss"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    Sep 25, 2021
+  </h3>
+  <h1>
+    NOI Linux 2.0 不完全食用指南
+  </h1>
+  <div class="content markdown-body">
+    <h1 id="NOI-Linux-2-0-不完全食用指南"><a href="#NOI-Linux-2-0-不完全食用指南" class="headerlink" title="NOI Linux 2.0 不完全食用指南"></a>NOI Linux 2.0 <del>不完全</del>食用指南</h1><p>Date: 2021-9-25 Author: 杳鸢</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://noi.cn/gynoi/jsgz/2021-07-16/732450.shtml">链接地址</a></p>
+<p>随着 NOI 官网对 NOI Linux 版本的更新，我们迎来了一个新的、与先前 1.4 版本完全不同的 NOI Linux；也正因为新版本的实用性更高了，所以不确定考场上会将 NOI Linux 从虚拟机中拉出来，变成实体机的操作系统。</p>
+<p>NOI 竞赛大纲中，对提高组的要求包括Linux操作；CSP-S 2021 初赛的试题中，第一题便考察了Linux常用命令之一<code>ls</code>。</p>
+<p>本篇文章将会向具有一定实践能力、能够通过搜索引擎解决简单问题的读者，详细介绍 NOI Linux 2.0 的安装与介绍、Linux下常用的命令与竞赛环境应用。</p>
+<p>感谢读者您的耐心阅读，若有错误，请在下方评论区提出或发送电邮告知笔者。</p>
+</blockquote>
+<h2 id="在虚拟机下的安装"><a href="#在虚拟机下的安装" class="headerlink" title="在虚拟机下的安装"></a>在虚拟机下的安装</h2><blockquote>
+<p>使用的是笔者的新笔记本电脑，配置如下</p>
+<p>Lenovo ThinkPad T14s AMD Gen 1</p>
+<p>CPU: AMD Ryzen 7 Pro 4750u 8C&#x2F;16T</p>
+<p>RAM: DDR4 3200 On-board 16GB</p>
+<p>SSD: WDC PC SN730 512GB Pci-e 3</p>
+<p>GPU: AMD Radeon Graphics</p>
+<p>WLAN: Intel WIFI 6 AX200</p>
+<p>LED: 14” 1920*1080 </p>
+</blockquote>
+<h3 id="Windows-10"><a href="#Windows-10" class="headerlink" title="Windows 10"></a>Windows 10</h3><blockquote>
+</blockquote>
+<h3 id="Linux-Arch-Linux"><a href="#Linux-Arch-Linux" class="headerlink" title="Linux (Arch Linux)"></a>Linux (Arch Linux)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">                  -`                    zixuan@zixuan </span><br><span class="line">                 .o+`                   ------------- </span><br><span class="line">                `ooo/                   OS: Arch Linux x86_64 </span><br><span class="line">               `+oooo:                  Host: 20UH0008CD ThinkPad T14s Gen 1 </span><br><span class="line">              `+oooooo:                 Kernel: 5.14.2-arch1-2 </span><br><span class="line">              -+oooooo+:                Uptime: 10 hours, 7 mins </span><br><span class="line">            `/:-:++oooo+:               Packages: 910 (pacman) </span><br><span class="line">           `/++++/+++++++:              Shell: bash 5.1.8 </span><br><span class="line">          `/++++++++++++++:             Resolution: 1920x1080 </span><br><span class="line">         `/+++ooooooooooooo/`           DE: GNOME 40.4 </span><br><span class="line">        ./ooosssso++osssssso+`          WM: Mutter </span><br><span class="line">       .oossssso-````/ossssss+`         WM Theme: Arc-Lighter </span><br><span class="line">      -osssssso.      :ssssssso.        Theme: Arc-Lighter [GTK2/3] </span><br><span class="line">     :osssssss/        osssso+++.       Icons: Arc [GTK2/3] </span><br><span class="line">    /ossssssss/        +ssssooo/-       Terminal: gnome-terminal </span><br><span class="line">  `/ossssso+/:-        -:/+osssso+-     CPU: AMD Ryzen 7 PRO 4750U with Radeon </span><br><span class="line"> `+sso+:-`                 `.-/+oso:    GPU: AMD ATI 06:00.0 Renoir </span><br><span class="line">`++:.                           `-/+/   Memory: 13301MiB / 13707Mi3B </span><br><span class="line">.`                                 `/</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Linux环境如上，使用著名的开源虚拟机软件 Oracle VM VirtualBox </p>
+</blockquote>
+<ul>
+<li><p>安装 VirtualBox</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Arch Linux</span></span><br><span class="line">$ pacman -S virtualbox-host-modules-arch //安装基础包</span><br><span class="line">$ yaourt -S virtualbox-ext-oracle //安装扩展包</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu/Debian</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian &lt;mydist&gt; contrib&quot;</span> &gt;&gt; /etc/apt/sources.list //将mydist改为你的发行版名称</span><br><span class="line">$ sudo apt-key add oracle_vbox_2016.asc //适用于 Debian8 Ubuntu 16.04 或之后的版本</span><br><span class="line">$ sudo apt-key add oracle_vbox.asc //适用于 Debian8 Ubuntu 16.04 之前的版本</span><br><span class="line">$ sudo apt-get update //更新</span><br><span class="line">$ sudo apt-get install virtualbox-6.1 //安装基础包</span><br><span class="line">$ sudo apt-get install virtualbox-ext-pack //安装扩展包</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开 VirtualBox 主界面，配置虚拟机</p>
+<img src="/home/zixuan/Documents/Blog/images/NOILinux-1.png" alt="NOILinux-1" style="zoom: 67%;" />
+
+<ul>
+<li><p>1.点击「新建」按钮</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-2.png" alt="NOILinux-2"></p>
+<ul>
+<li>「名称」根据自己的需求填写，建议使用英文字符，以防未知错误</li>
+<li>「文件夹」按照默认位置即可，如有需要自行修改</li>
+<li>「类型」选择 <code>Linux</code></li>
+<li>「版本」选择 <code>Ubuntu (64-bit)</code> ，NOI Linux 2.0版本是在 Ubuntu 20.04 LTS 版本上客制化的，根本上仍属于 Ubuntu 系统；切勿选择 <code>32bit</code></li>
+<li>检查无误后，点击「下一步」</li>
+</ul>
+</li>
+<li><p>2.分配内存大小</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-3.png" alt="NOILinux-3"></p>
+<ul>
+<li>调整为 <code>2048MB</code> ，在这里建议读者，如果主机有足够的空闲内存，分配给虚拟机 <code>4096MB</code> 的内存大小</li>
+<li>检查无误后，点击「下一步」</li>
+</ul>
+</li>
+<li><p>3.创建虚拟硬盘</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-4.png" alt="NOILinux-4"></p>
+<ul>
+<li>选择「现在创建虚拟硬盘」</li>
+<li>检查无误后，点击「创建」</li>
+</ul>
+</li>
+<li><p>4.选择虚拟硬盘文件类型</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-5.png" alt="NOILinux-5"></p>
+<ul>
+<li>选择「VDI (VirtualBox 磁盘映像)」</li>
+<li>检查无误后，点击「下一步」</li>
+</ul>
+</li>
+<li><p>5.选择虚拟硬盘分配方式</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-6.png" alt="NOILinux-6"></p>
+<ul>
+<li>此处应根据读者自己的实际情况选择，这里笔者选择「固定大小」</li>
+<li>检查无误后，点击「下一步」</li>
+</ul>
+</li>
+<li><p>6.选择文件位置和大小</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-7.png"></p>
+<ul>
+<li>虚拟硬盘文件位置根据默认位置即可，无需改动</li>
+<li>虚拟硬盘的大小，这里笔者调整为 <code>20GB</code> ，读者可根据自己的实际情况调整，建议不少于 <code>20GB</code></li>
+<li>检查无误后，点击「创建」</li>
+</ul>
+</li>
+<li><p>7.在主界面点击设置</p>
+<img src="/home/zixuan/Documents/Blog/images/NOILinux-8.png" style="zoom:67%;" />
+
+<ul>
+<li><p>常规-&gt;高级</p>
+<p>更改「共享粘贴板」为「双向」</p>
+<p>更改「拖放」为「双向」</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-9.png" alt="NOILinux-9"></p>
+</li>
+<li><p>系统-&gt;处理器</p>
+<p>这里笔者将处理器数量调整为 <code>4</code>，并启用了所有的扩展特性</p>
+<p>建议读者根据自己的实际情况自行调整，建议处理器数量不少于 <code>2</code></p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-10.png" alt="NOILinux-10"></p>
+</li>
+<li><p>系统-&gt;硬件加速</p>
+<p>这里笔者使用 <code>KVM</code> 半虚拟化接口，并启用了嵌套分页</p>
+<p>建议读者根据自己的实际情况调整，或采用默认选项</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-11.png" alt="NOILinux-11"></p>
+</li>
+<li><p>显示-&gt;屏幕</p>
+<p>这里笔者将显存大小调整为 <code>128MB</code> ，建议读者根据自己的实际情况调整</p>
+<p>如果是集成显卡，不建议启用「3D加速」选项，会导致卡顿</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-12.png" alt="NOILinux-12"></p>
+</li>
+<li><p>储存</p>
+<p>此处需要挂载我们提前在官网下载好的镜像文件 <code>ubuntu-noi-v2.0.iso</code></p>
+<ul>
+<li><p>打开光盘图标，点击「选择虚拟盘」</p>
+<p><img src="/home/zixuan/Documents/Blog/images/NOILinux-13.png" alt="NOILinux-13"></p>
+</li>
+<li><p>在弹出的文件管理界面单击镜像文件，然后点击「打开」</p>
+<img src="/home/zixuan/Documents/Blog/images/NOILinux-14.png" alt="NOILinux-14" style="zoom: 67%;" /></li>
+</ul>
+</li>
+<li><p>检查无误后，点击「确定」</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>安装 NOI Linux</p>
+<ul>
+<li><p>在主界面启动虚拟机</p>
+<p>  启动后界面应当如下</p>
+<p>  <img src="/home/zixuan/Documents/Blog/images/NOILinux-15.png" alt="NOILinux-15"></p>
+</li>
+<li><p>选择语言</p>
+<p>  滚动至最底，选择「中文(简体)」或「中文(繁体)」</p>
+<p>  点击「安装 Ubuntu」</p>
+</li>
+<li><p>键盘布局</p>
+<p>  <img src="/home/zixuan/Documents/Blog/images/NOILinux-16.png" alt="NOILinux-16"></p>
+<p>  点击探测键盘布局</p>
+<p>  测试完成后，点击「继续」</p>
+</li>
+<li><p>更新和其他软件</p>
+<p>  此处选择「正常安装」</p>
+<p>  建议关闭「安装Ubuntu时下载更新」</p>
+<p>  无需开启「为图形或无线硬件，以及其他媒体格式安装第三方软件」</p>
+<p>  检查无误后，点击「继续」</p>
+<p>  <img src="/home/zixuan/Documents/Blog/images/NOILinux-17.png" alt="NOILinux-17"></p>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="在实体机上的安装"><a href="#在实体机上的安装" class="headerlink" title="在实体机上的安装"></a>在实体机上的安装</h2><blockquote>
+<p>笔者的旧笔记本电脑有一定的年头了，大概是10年的机龄，配置如下</p>
+<p>HP Compaq 2230s</p>
+<p>CPU: Intel Core 2 Duo P8800 2.66 GHz 2C&#x2F;2T</p>
+<p>RAM: DDR2 SO-DIMM 800 2G*2</p>
+<p>SSD: SAMSUNG CM871 TLC 192GB</p>
+<p>GPU: Intel GMA X4500HD</p>
+<p>WLAN: Intel WIFI Link 5100 AGN</p>
+<p>LCD: 12.1” 1280*800</p>
+</blockquote>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2021-2/trackpoint-mid-key-modify/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2021-2/oi-luogu-p2542/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://uniya.work/">Copyright © Uniya 2021</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/leedom92/hexo-theme-leedom">Theme by Leedom | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          <!-- <span class="search-icon-input">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </span> -->
+          
+            <input type="text" class="search-input" id="search-input" placeholder="$ grep...">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-close"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    // inputArea.onclick = function() {
+    //   getSearchFile()
+    //   this.onclick = null
+    // }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+        getSearchFile()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'><span></ul>";
+      // $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'><h2>" + orig_data_title + "</h2></a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<h3 class=\"search-result-abstract\">" + match_content + "...</h3>"
+                }
+                str += "<hr></li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/leedom92/hexo-theme-leedom#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>
