@@ -46,6 +46,15 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://uniya.work/404.html</loc>
+    
+    <lastmod>2017-05-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   <url>
     <loc>https://uniya.work/</loc>
