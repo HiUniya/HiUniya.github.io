@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>杳鸢的小屋</title>
+  <icon>https://uniya.work/favicon.png</icon>
+  <subtitle>This is Uniya&#39;s Blog</subtitle>
+  <link href="https://uniya.work/atom.xml" rel="self"/>
+  
+  <link href="https://uniya.work/"/>
+  <updated>2024-06-03T07:56:06.065Z</updated>
+  <id>https://uniya.work/</id>
+  
+  <author>
+    <name>杳鸢</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Blog更新近况</title>
+    <link href="https://uniya.work/2024/something-to-say/"/>
+    <id>https://uniya.work/2024/something-to-say/</id>
+    <published>2024-06-03T07:47:55.000Z</published>
+    <updated>2024-06-03T07:56:06.065Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;如你现在所看到的，上一个版本的Blog已经被叉出去了&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="Notice" scheme="https://uniya.work/tags/Notice/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>速通C++栏目｜前言</title>
+    <link href="https://uniya.work/2024/cpp-quick-review-1/"/>
+    <id>https://uniya.work/2024/cpp-quick-review-1/</id>
+    <published>2024-06-03T06:46:58.000Z</published>
+    <updated>2024-06-03T07:47:23.273Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;今天是六月三日，距离期末考试周仍有四周时间，遂开坑记录。&lt;/p&gt;
+&lt;p&gt;相比上一学期的C语言课程，这一学期的C++语言由于面向对象方式的引入，着实增加了不少难度。即使对编者而言，虽然已经通过上学期的 Python 学习了不少面向对象的内容，但理论题仍然算不得轻松。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="cpp" scheme="https://uniya.work/tags/cpp/"/>
+    
+    <category term="review" scheme="https://uniya.work/tags/review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://uniya.work/2024/hello-world/"/>
+    <id>https://uniya.work/2024/hello-world/</id>
+    <published>2024-04-19T14:09:31.417Z</published>
+    <updated>2024-04-19T14:09:31.417Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
