@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://uniya.work/2024/solve-mathjax-inline-formula-not-display/</loc>
+    <loc>https://uniya.work/2024/hexo-solve-image-path-difference-between-editor-and-website/</loc>
     
     <lastmod>2024-09-22</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://uniya.work/about/index.html</loc>
+    <loc>https://uniya.work/2024/something-to-say/</loc>
     
     <lastmod>2024-09-22</lastmod>
     
@@ -29,9 +29,27 @@
   </url>
   
   <url>
-    <loc>https://uniya.work/2024/something-to-say/</loc>
+    <loc>https://uniya.work/2024/solve-mathjax-inline-formula-not-display/</loc>
     
-    <lastmod>2024-06-03</lastmod>
+    <lastmod>2024-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uniya.work/2024/install-hoj-by-stand-alone-in-mainland/</loc>
+    
+    <lastmod>2024-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uniya.work/about/index.html</loc>
+    
+    <lastmod>2024-09-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -74,6 +92,13 @@
 
   
   <url>
+    <loc>https://uniya.work/tags/Hexo/</loc>
+    <lastmod>2024-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://uniya.work/tags/Notice/</loc>
     <lastmod>2024-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -81,14 +106,14 @@
   </url>
   
   <url>
-    <loc>https://uniya.work/tags/Training/</loc>
+    <loc>https://uniya.work/tags/Tech/</loc>
     <lastmod>2024-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://uniya.work/tags/Hexo/</loc>
+    <loc>https://uniya.work/tags/Training/</loc>
     <lastmod>2024-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
