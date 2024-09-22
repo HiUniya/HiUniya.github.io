@@ -6,7 +6,7 @@
   <link href="https://uniya.work/atom.xml" rel="self"/>
   
   <link href="https://uniya.work/"/>
-  <updated>2024-06-03T07:56:06.065Z</updated>
+  <updated>2024-09-22T08:17:50.687Z</updated>
   <id>https://uniya.work/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>训练记录-Atcoder</title>
+    <link href="https://uniya.work/2024/train-atc/"/>
+    <id>https://uniya.work/2024/train-atc/</id>
+    <published>2024-09-15T08:22:43.000Z</published>
+    <updated>2024-09-22T08:17:50.687Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;记录一下 atcoder的一些解题。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>关于Blog更新近况</title>
@@ -32,28 +49,6 @@
     
     
     <category term="Notice" scheme="https://uniya.work/tags/Notice/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>速通C++栏目｜前言</title>
-    <link href="https://uniya.work/2024/cpp-quick-review-1/"/>
-    <id>https://uniya.work/2024/cpp-quick-review-1/</id>
-    <published>2024-06-03T06:46:58.000Z</published>
-    <updated>2024-06-03T07:47:23.273Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;今天是六月三日，距离期末考试周仍有四周时间，遂开坑记录。&lt;/p&gt;
-&lt;p&gt;相比上一学期的C语言课程，这一学期的C++语言由于面向对象方式的引入，着实增加了不少难度。即使对编者而言，虽然已经通过上学期的 Python 学习了不少面向对象的内容，但理论题仍然算不得轻松。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="cpp" scheme="https://uniya.work/tags/cpp/"/>
-    
-    <category term="review" scheme="https://uniya.work/tags/review/"/>
     
   </entry>
   
