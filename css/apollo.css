@@ -6,10 +6,6 @@ html {
 }
 
 body {
-	background-image: url(/back_ground.png);
-	background-size: cover;
-	background-attachment: fixed;
-    background-position-x: center;
     margin: 0
 }
 
@@ -806,10 +802,16 @@ main.container {
 }
 
 @media screen and (min-width: 700px) {
+    body {
+        background-image: url(/back_ground_web.jpg);
+	    background-size: cover;
+	    background-attachment: fixed;
+        background-position-x: center;
+    }
     .wrap {
         width: 700px;
         margin: 0 auto;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(3px);
         background: rgba(255, 255, 255, 0.5);
         min-height: 100%
     }
@@ -820,9 +822,15 @@ main.container {
 }
 
 @media screen and (max-width: 700px) {
+    body {
+        background-image: url(/back_ground_phone.jpg);
+	    background-size: cover;
+	    background-attachment: fixed;
+        background-position-x: center;
+    }
     .wrap {
-        width: 100%
-        backdrop-filter: blur(5px);
+        width: 100%;
+        backdrop-filter: blur(3px);
         background: rgba(255, 255, 255, 0.5);
         min-height: 100%
     }
@@ -879,13 +887,13 @@ footer .copyright {
 
 footer .copyright p,
 footer .copyright a {
-    color: #aaa;
+    color: #fff;
     font-size: 14px;
     font-weight: 100
 }
 
 footer .copyright a:hover {
-    color: #888
+    color: #aaa
 }
 
 @font-face {
