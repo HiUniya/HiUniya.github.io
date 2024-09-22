@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>杳鸢的小屋</title>
+  <title>夏槿的小屋</title>
   <icon>https://uniya.work/favicon.png</icon>
   <subtitle>This is Uniya&#39;s Blog</subtitle>
   <link href="https://uniya.work/atom.xml" rel="self"/>
   
   <link href="https://uniya.work/"/>
-  <updated>2024-09-22T08:17:50.687Z</updated>
+  <updated>2024-09-22T08:54:59.251Z</updated>
   <id>https://uniya.work/</id>
   
   <author>
-    <name>杳鸢</name>
+    <name>夏槿</name>
     
   </author>
   
@@ -21,15 +21,17 @@
     <link href="https://uniya.work/2024/train-atc/"/>
     <id>https://uniya.work/2024/train-atc/</id>
     <published>2024-09-15T08:22:43.000Z</published>
-    <updated>2024-09-22T08:17:50.687Z</updated>
+    <updated>2024-09-22T08:54:59.251Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;记录一下 atcoder的一些解题。&lt;/p&gt;
+&lt;p&gt;记录一下 atcoder 的一些解题思路和代码。&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
     
+    
+    <category term="Training" scheme="https://uniya.work/tags/Training/"/>
     
   </entry>
   
