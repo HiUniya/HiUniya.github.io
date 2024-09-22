@@ -1,3 +1,4 @@
+https://uniya.work/2024/solve-mathjax-inline-formula-not-display/
 https://uniya.work/2024/train-atc/
 https://uniya.work/about/index.html
 https://uniya.work/2024/something-to-say/
@@ -7,3 +8,4 @@ https://uniya.work/404.html
 https://uniya.work/
 https://uniya.work/tags/Notice/
 https://uniya.work/tags/Training/
+https://uniya.work/tags/Hexo/

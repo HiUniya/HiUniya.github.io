@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 解决 MathJax 下内联公式不加载的问题 · 夏槿的小屋</title><meta name="description" content="解决 MathJax 下内联公式不加载的问题 - 夏槿"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://uniya.work/atom.xml" title="夏槿的小屋"><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="夏槿的小屋" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/hiUniya" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/friends/" target="_self" class="nav-list-link">FRIENDS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">解决 MathJax 下内联公式不加载的问题</h1><div class="post-info">2024年9月22日</div><div class="post-content"><blockquote>
+<p>今天更新 Blog 的时候，发现 LaTex 内联公式无法加载。</p>
+<p>遂记录如下</p>
+</blockquote>
+<span id="more"></span>
+
+<p>主题源代码使用如下的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script(async src=&quot;//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML&quot; integrity=&quot;sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW&quot; crossorigin=&quot;anonymous&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>由于 MathJax 不开启 <code>$</code> 单符号的内联公式，查找文档后遂补上如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">script.</span><br><span class="line">    MathJax.Hub.Config(&#123;</span><br><span class="line">        tex2jax: &#123;inlineMath: [[&#x27;$&#x27;, &#x27;$&#x27;],[&#x27;\\(&#x27;, &#x27;\\)&#x27;]]&#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>但仍然不起作用。后来查了一下 <code>async</code> 的用处：不会阻塞页面的渲染，同时也不会等待其他脚本的加载。</p>
+<p>将第一段代码去除 <code>async</code> 后即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script(type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML&quot;)</span><br></pre></td></tr></table></figure>
+
+<div class="tip">该主题使用的是 Jade模板引擎，因此上述代码块均为 Jade 代码。</div>
+
+<p>参考文档：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zh.javascript.info/script-async-defer">脚本：async，defer|Javascript.info</a></li>
+<li><a target="_blank" rel="noopener" href="https://i5ting.github.io/stuq-koa/koa-practice/jade.html">Jade模板引擎|StuQ Koa 在线课程</a></li>
+<li><a target="_blank" rel="noopener" href="https://adaning.github.io/posts/33457.html">MathJax常见问题|DaNing的博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/andnot/archive/2013/04/03/MathJax.html">MathJax详细配置——在线显示LaTeX公式的解决方案|与非的本子</a></li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a href="/2024/train-atc/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2024 <a href="https://uniya.work">夏槿</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p><p>Background by <a href="https://www.pixiv.net/artworks/67213776" target="_blank">SUEUN</a>.</p></div></footer></div><script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'],['\\(', '\\)']]}
+});
+
+</script></body></html>
