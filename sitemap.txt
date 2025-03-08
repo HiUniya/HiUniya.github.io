@@ -1,5 +1,6 @@
-https://uniya.work/2024/ds-exp-review-one/
 https://uniya.work/friends/index.html
+https://uniya.work/2025/my-summary-of-2024/
+https://uniya.work/2024/ds-exp-review-one/
 https://uniya.work/2024/hexo-solve-image-path-difference-between-editor-and-website/
 https://uniya.work/2024/train-atc/
 https://uniya.work/2024/something-to-say/
@@ -10,6 +11,6 @@ https://uniya.work/2024/hello-world/
 https://uniya.work/404.html
 https://uniya.work/
 https://uniya.work/tags/Hexo/
-https://uniya.work/tags/Notice/
 https://uniya.work/tags/Tech/
+https://uniya.work/tags/Notice/
 https://uniya.work/tags/Training/

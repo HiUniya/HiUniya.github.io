@@ -2,18 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://uniya.work/2024/ds-exp-review-one/</loc>
+    <loc>https://uniya.work/friends/index.html</loc>
     
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-03-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://uniya.work/friends/index.html</loc>
+    <loc>https://uniya.work/2025/my-summary-of-2024/</loc>
     
-    <lastmod>2024-11-29</lastmod>
+    <lastmod>2025-01-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://uniya.work/2024/ds-exp-review-one/</loc>
+    
+    <lastmod>2025-01-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -94,7 +103,7 @@
 
   <url>
     <loc>https://uniya.work/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -102,28 +111,28 @@
   
   <url>
     <loc>https://uniya.work/tags/Hexo/</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://uniya.work/tags/Notice/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://uniya.work/tags/Tech/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://uniya.work/tags/Notice/</loc>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://uniya.work/tags/Training/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
