@@ -6,7 +6,7 @@
   <link href="https://uniya.work/atom.xml" rel="self"/>
   
   <link href="https://uniya.work/"/>
-  <updated>2025-07-24T11:35:50.624Z</updated>
+  <updated>2025-08-02T18:17:56.249Z</updated>
   <id>https://uniya.work/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ThinkPad L14 AMD Gen1 在 Linux 下的指纹识别使用</title>
+    <link href="https://uniya.work/2025/55x4-fingerprint-reader-under-linux/"/>
+    <id>https://uniya.work/2025/55x4-fingerprint-reader-under-linux/</id>
+    <published>2025-08-02T18:17:28.000Z</published>
+    <updated>2025-08-02T18:17:56.249Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;记录一下，感谢高人的开源仓库呜呜&lt;/p&gt;
+&lt;p&gt;我的设备：&lt;/p&gt;
+&lt;p&gt;Device: ThinkPad L14 Gen1 AMD&lt;/p&gt;
+&lt;p&gt;System: Arch Linux&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;从&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>无题</title>

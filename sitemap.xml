@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://uniya.work/2025/55x4-fingerprint-reader-under-linux/</loc>
+    
+    <lastmod>2025-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://uniya.work/friends/index.html</loc>
     
     <lastmod>2025-07-30</lastmod>
@@ -103,7 +112,7 @@
 
   <url>
     <loc>https://uniya.work/</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -111,28 +120,28 @@
   
   <url>
     <loc>https://uniya.work/tags/Hexo/</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://uniya.work/tags/Tech/</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://uniya.work/tags/Notice/</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://uniya.work/tags/Training/</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
