@@ -6,7 +6,7 @@
   <link href="https://uniya.work/atom.xml" rel="self"/>
   
   <link href="https://uniya.work/"/>
-  <updated>2025-08-02T18:19:45.070Z</updated>
+  <updated>2026-06-14T19:38:22.334Z</updated>
   <id>https://uniya.work/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>「夜谈」失落的夜晚</title>
+    <link href="https://uniya.work/2026/late-night-chat-061526/"/>
+    <id>https://uniya.work/2026/late-night-chat-061526/</id>
+    <published>2026-06-14T19:36:04.000Z</published>
+    <updated>2026-06-14T19:38:22.334Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;我似乎，一无所有。&lt;/p&gt;
+&lt;p&gt;在迷雾中丧失自我。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>ThinkPad L14 AMD Gen1 在 Linux 下的指纹识别使用</title>
     <link href="https://uniya.work/2025/55x4-fingerprint-reader-under-linux/"/>
     <id>https://uniya.work/2025/55x4-fingerprint-reader-under-linux/</id>
     <published>2025-08-02T18:17:28.000Z</published>
-    <updated>2025-08-02T18:19:45.070Z</updated>
+    <updated>2025-08-02T18:19:46.000Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -41,7 +66,7 @@
     <link href="https://uniya.work/2025/sophomore-summery/"/>
     <id>https://uniya.work/2025/sophomore-summery/</id>
     <published>2025-07-23T14:18:03.000Z</published>
-    <updated>2025-07-24T11:35:50.624Z</updated>
+    <updated>2025-07-24T11:35:52.000Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -60,7 +85,7 @@
     <link href="https://uniya.work/2024/ds-exp-review-one/"/>
     <id>https://uniya.work/2024/ds-exp-review-one/</id>
     <published>2024-12-25T16:51:11.000Z</published>
-    <updated>2025-01-01T09:53:11.738Z</updated>
+    <updated>2025-01-01T09:53:12.000Z</updated>
     
     
       
@@ -86,7 +111,7 @@
     <link href="https://uniya.work/2024/hexo-solve-image-path-difference-between-editor-and-website/"/>
     <id>https://uniya.work/2024/hexo-solve-image-path-difference-between-editor-and-website/</id>
     <published>2024-09-22T14:12:54.000Z</published>
-    <updated>2024-09-22T14:45:47.829Z</updated>
+    <updated>2024-09-22T14:45:48.000Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -105,7 +130,7 @@
     <link href="https://uniya.work/2024/solve-mathjax-inline-formula-not-display/"/>
     <id>https://uniya.work/2024/solve-mathjax-inline-formula-not-display/</id>
     <published>2024-09-22T12:17:43.000Z</published>
-    <updated>2024-09-22T14:08:48.976Z</updated>
+    <updated>2024-09-22T14:08:50.000Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -125,7 +150,7 @@
     <link href="https://uniya.work/2024/train-atc/"/>
     <id>https://uniya.work/2024/train-atc/</id>
     <published>2024-09-15T08:22:43.000Z</published>
-    <updated>2024-09-22T14:09:10.839Z</updated>
+    <updated>2024-09-22T14:09:12.000Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -144,7 +169,7 @@
     <link href="https://uniya.work/2024/install-hoj-by-stand-alone-in-mainland/"/>
     <id>https://uniya.work/2024/install-hoj-by-stand-alone-in-mainland/</id>
     <published>2024-09-12T04:19:00.000Z</published>
-    <updated>2024-09-22T14:07:41.647Z</updated>
+    <updated>2024-09-22T14:07:42.000Z</updated>
     
     
     <summary type="html">&lt;div class=&quot;tip&quot;&gt;
@@ -166,7 +191,7 @@
     <link href="https://uniya.work/2024/something-to-say/"/>
     <id>https://uniya.work/2024/something-to-say/</id>
     <published>2024-06-03T07:47:55.000Z</published>
-    <updated>2024-09-22T14:08:59.807Z</updated>
+    <updated>2024-09-22T14:09:00.000Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -184,8 +209,8 @@
     <title>Hello World</title>
     <link href="https://uniya.work/2024/hello-world/"/>
     <id>https://uniya.work/2024/hello-world/</id>
-    <published>2024-04-19T14:09:31.417Z</published>
-    <updated>2024-04-19T14:09:31.417Z</updated>
+    <published>2024-04-19T14:09:32.000Z</published>
+    <updated>2024-04-19T14:09:32.000Z</updated>
     
     
       
